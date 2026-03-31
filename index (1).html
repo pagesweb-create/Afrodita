@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afrodita Makeup | Catálogo</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="menu-floater" id="btn-menu" onclick="toggleMenu()">
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <aside id="menu-sidebar" class="menu-hidden">
+        <div class="menu-header">
+            <img src="logo.png.png" alt="Logo" style="width: 80px;">
+            <h3>Categorías</h3>
+        </div>
+        <nav>
+            <ul class="menu-categorias-vertical">
+                <li onclick="filtrar('todos')">Todos</li>
+                <li onclick="filtrar('Labiales')">Labiales</li>
+                <li onclick="filtrar('Bases')">Bases</li>
+                <li onclick="filtrar('Sombras')">Sombras</li>
+                <li onclick="filtrar('Cuidado Facial')">Cuidado Facial</li>
+                <li class="item-maquillaje">
+                    <a href="https://carlinius16.github.io/By-Adhara/" style="text-decoration: none; color: inherit;">
+                        ✨ Zona de Ropa ✨
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <header>
+        <div class="logo">
+            <img src="logo.png.png" alt="Adhara Store">
+        </div>
+    </header>
+
+    <div class="cart-floater" id="cart-burbuja" onclick="toggleCarrito()">
+        <span class="cart-icon">🛒</span>
+        <span class="cart-count-bubble" id="cuenta-carrito">0</span>
+    </div>
+
+    <aside id="carrito-sidebar" class="carrito-hidden">
+        <div class="carrito-header">
+            <h3>Tu Pedido</h3>
+            <button class="btn-cerrar-x" onclick="toggleCarrito()">✕</button>
+        </div>
+        <div id="items-carrito" class="items-container"></div>
+        <div class="carrito-footer">
+            <div class="total-info">
+                <span>Total:</span>
+                <strong>$<span id="total-precio">0</span></strong>
+            </div>
+            <button class="btn-whatsapp" onclick="enviarWhatsApp()">Pedir por WhatsApp 💬</button>
+        </div>
+    </aside>
+
+   <main>
+    <div class="search-wrapper">
+        <div class="search-container">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="buscador" placeholder="Busca tu maquillaje ideal..." onkeyup="buscarProductos()">
+        </div>
+    </div>
+
+    <h2 id="titulo-categoria">Colección Afrodita</h2>
+    <div id="contenedor-productos" class="grid-productos"></div>
+</main>
+
+    <script src="script.js"></script>
+</body>
+</html>
